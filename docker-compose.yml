@@ -19,4 +19,6 @@ services:
     image: boky/postfix
     environment:
       - ALLOWED_SENDER_DOMAINS=group.lt
+      - POSTFIX_always_add_missing_headers=yes
+      - HOSTNAME=fqdn.group.lt # set to the hostname of the server
       
