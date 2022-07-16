@@ -10,7 +10,7 @@ mail - smtp relay server, we will use postfix
 
 the main thing is to use ssmtp on the php container and send data to mail container
 
-enoy!
+enjoy!
 
 
 
