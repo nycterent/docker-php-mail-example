@@ -5,7 +5,9 @@ In the dockerized environment usually you want to run the least amount of servic
 Let's create a docker-compose.yml file, containing all required containers:
 
 caddy - web server
+
 php - php server for the app
+
 mail - smtp relay server, we will use postfix
 
 the main thing is to use ssmtp on the php container and send data to mail container
