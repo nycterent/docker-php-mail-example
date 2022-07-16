@@ -1,0 +1,8 @@
+FROM php:fpm-bullseye 
+RUN apt-get update && apt-get install -y ssmtp
+
+RUN echo '\
+mailhub=mail\n\
+hostname=group.lt\n\
+FromLineOverride=yes\n\
+' > /etc/ssmtp/ssmtp.conf

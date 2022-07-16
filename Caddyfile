@@ -1,0 +1,4 @@
+http://test.group.lt {
+    root * /var/www/html
+    php_fastcgi php:9000
+}

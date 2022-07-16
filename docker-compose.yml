@@ -1,0 +1,22 @@
+version: '3'
+services:
+  caddy:
+    image: caddy
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+     - ./caddy:/data
+     - ./Caddyfile:/etc/caddy/Caddyfile
+     - ./app:/var/www/html:ro
+  php:
+    build:
+      context: .
+      dockerfile: php-Dockerfile
+    volumes:
+      - ./app:/var/www/html:ro      
+  mail: 
+    image: boky/postfix
+    environment:
+      - ALLOWED_SENDER_DOMAINS=group.lt
+      
