@@ -1,8 +1,8 @@
 FROM php:fpm-bullseye 
-RUN apt-get update && apt-get install -y ssmtp
+RUN apt-get update && apt-get install -y msmtp
 
-RUN echo '\
-mailhub=mail\n\
-hostname=group.lt\n\
-FromLineOverride=yes\n\
-' > /etc/ssmtp/ssmtp.conf
+COPY msmtprc /etc/msmtprc
+
+RUN ln -sf /usr/bin/msmtp /usr/bin/sendmail
+RUN ln -sf /usr/bin/msmtp /usr/sbin/sendmail
+
